@@ -1,5 +1,5 @@
 #N canvas 676 87 536 467 10;
-#X declare -lib cachorita;
+#X declare -lib multicatch;
 #X declare -path lib;
 #X text 108 13 \$1 nombre del canal \$2 in (etiqueta) \$3 out (etiqueta)
 \$4 envio 1 (etiqueta) \$5;
@@ -116,9 +116,9 @@
 #X connect 3 0 1 0;
 #X connect 3 1 2 0;
 #X restore 113 365 pd vuR-post~;
-#X obj -27 431 rita~ \$3_L;
-#X obj 112 431 rita~ \$3_R;
-#X obj -25 15 import cachorita;
+#X obj -27 431 mthrow~ \$3_L;
+#X obj 112 431 mthrow~ \$3_R;
+#X obj -25 15 import multicatch;
 #N canvas 949 236 450 300 vu_signal 0;
 #X obj 13 119 multiplex 0 1;
 #X obj 108 119 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -141,7 +141,7 @@
 #X connect 8 0 4 0;
 #X connect 9 0 0 1;
 #X restore 285 120 pd vu_signal;
-#X obj -26 86 cacho~ \$2;
+#X obj -26 86 mcatch~ \$2;
 #X obj -25 40 path lib;
 #N canvas 762 267 450 300 vu-pre~ 0;
 #X obj 14 -38 inlet~;
@@ -192,7 +192,7 @@
 #X obj -3 28 r bus_control;
 #X obj 108 153 cnv 15 160 80 empty empty Send_1 5 12 0 14 -233017 -66577
 0;
-#X obj 117 211 rita~ \$4_L;
+#X obj 117 211 mthrow~ \$4_L;
 #X obj 108 109 s~ \$0_send;
 #N canvas 532 246 608 250 send 0;
 #X obj 21 124 outlet~;
@@ -208,7 +208,7 @@
 #X connect 4 0 1 0;
 #X connect 5 0 2 0;
 #X restore 118 180 pd send;
-#X obj 197 211 rita~ \$4_R;
+#X obj 197 211 mthrow~ \$4_R;
 #X obj 110 28 r~ /\$1/bus_pre;
 #X obj 212 29 r~ /\$1/bus_post;
 #X connect 1 0 5 0;

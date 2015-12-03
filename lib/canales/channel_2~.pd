@@ -1,5 +1,5 @@
 #N canvas 289 112 504 475 10;
-#X declare -lib cachorita;
+#X declare -lib multicatch;
 #X declare -path libreria;
 #X text 108 13 \$1 nombre del canal \$2 in (etiqueta) \$3 out (etiqueta)
 \$4 envio 1 (etiqueta) \$5;
@@ -102,10 +102,10 @@
 #X connect 3 0 1 0;
 #X connect 3 1 2 0;
 #X restore 113 368 pd vuR-post~;
-#X obj -27 404 rita~ \$3_L;
-#X obj 112 404 rita~ \$3_R;
-#X obj -19 15 import cachorita;
-#X obj -26 85 cacho~ \$2_L;
+#X obj -27 404 mthrow~ \$3_L;
+#X obj 112 404 mthrow~ \$3_R;
+#X obj -19 15 import multicatch;
+#X obj -26 85 mcatch~ \$2_L;
 #N canvas 609 263 450 300 eq~ 0;
 #X obj 20 18 inlet~;
 #X obj 19 91 outlet~;
@@ -154,7 +154,7 @@
 #X connect 0 1 3 0;
 #X connect 1 0 0 0;
 #X restore 113 142 pd vuL-pre~;
-#X obj 114 85 cacho~ \$2_R;
+#X obj 114 85 mcatch~ \$2_R;
 #N canvas 667 174 450 300 vu_signal_S 0;
 #X obj 13 119 multiplex 0 1;
 #X obj 108 119 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10

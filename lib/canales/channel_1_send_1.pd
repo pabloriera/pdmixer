@@ -1,4 +1,4 @@
-#N canvas 239 83 1039 533 10;
+#N canvas 245 69 1039 533 10;
 #X declare -lib pdcontainer;
 #X declare -lib pdcontainer;
 #X declare -lib pdcontainer;
@@ -9,30 +9,30 @@
 #X obj 159 276 vu 15 120 empty empty -1 -8 0 10 -66577 -1 0 0;
 #X obj 153 422 tgl 17 0 empty empty pre 20 9 0 12 -262144 -1 -4160
 0 1;
-#X text 129 13 CONTROL;
-#X obj 672 3 cnv 15 170 120 empty empty Canvas 20 12 0 14 -233017 -66577
-0;
-#X obj 675 52 symbol \$1;
-#X obj 675 31 initbang;
-#X msg 675 79 label \$1;
-#X obj 498 128 cnv 15 500 250 empty empty State 20 12 0 14 -233017
+#X text 129 73 CONTROL;
+#X obj 213 72 cnv 15 210 120 empty empty Canvas 20 12 0 14 -233017
 -66577 0;
-#X obj 498 3 cnv 15 160 120 empty empty Ventana_Emergente 20 12 0 14
--233017 -66577 0;
-#X msg 516 54 vis \$1;
-#X obj 516 75 s pd-editor\$1;
-#X obj 514 181 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+#X obj 226 118 symbol \$1;
+#X obj 226 97 initbang;
+#X msg 226 145 label \$1;
+#X obj 215 326 cnv 15 210 190 empty empty State 20 12 0 14 -233017
+-66577 0;
+#X obj 215 201 cnv 15 210 120 empty empty Ventana_Emergente 20 12 0
+14 -233017 -66577 0;
+#X msg 233 252 vis \$1;
+#X obj 233 273 s pd-editor\$1;
+#X obj 221 379 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
 10 -262144 -1 -1 1 256;
-#X obj 514 230 iem_receive;
-#X obj 514 260 symbol;
-#X obj 675 101 s canvas_set_\$0;
-#X obj 514 290 s canvas_name_\$0;
-#X obj 737 52 r canvas_name_\$0;
-#X msg 514 203 set channel_1_send_1_\$1;
-#X obj 514 159 sfruit/instance channel_1_send_1;
-#X obj 516 32 r \$0_editor;
-#X obj 212 443 s \$0_editor;
-#N canvas 394 106 671 319 editor\$1 1;
+#X obj 221 428 iem_receive;
+#X obj 221 458 symbol;
+#X obj 226 167 s canvas_set_\$0;
+#X obj 221 488 s canvas_name_\$0;
+#X obj 288 118 r canvas_name_\$0;
+#X msg 221 401 set channel_1_send_1_\$1;
+#X obj 221 357 sfruit/instance channel_1_send_1;
+#X obj 233 230 r \$0_editor;
+#X obj 24 479 s \$0_editor;
+#N canvas 428 416 937 319 editor\$1 0;
 #X obj 9 223 s /\$1/eq_params;
 #X obj 9 -38 metrum 50 1;
 #X obj 9 15 gui.eq7.mmb \$1;
@@ -40,8 +40,8 @@
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
-#X restore 516 98 pd editor\$1;
-#X obj -4 257 r canvas_name_\$0;
+#X restore 233 296 pd editor\$1;
+#X obj -9 198 r canvas_name_\$0;
 #X obj 153 441 ui_editor;
 #X obj 103 273 ui_fader \$1;
 #X obj 102 403 ui_pan \$1;
@@ -59,13 +59,13 @@
 #X obj 101 101 cnv 15 100 20 empty canvas_set_\$0 CH1 10 10 0 14 -233017
 -66577 0;
 #X obj 153 461 ui_mute \$1;
-#X obj 239 292 iem_receive /\$1/vuL_control;
-#X obj 235 349 iem_receive /\$1/vuR_control;
-#X obj 219 182 r canvas_name_\$0;
-#X obj 219 209 unsymbol;
-#X obj 219 234 list;
-#X msg 235 323 set /\$1/vuR_control;
-#X msg 239 266 set /\$1/vuL_control;
+#X obj 559 592 iem_receive /\$1/vuL_control;
+#X obj 539 645 iem_receive /\$1/vuR_control;
+#X obj 529 482 r canvas_name_\$0;
+#X obj 539 509 unsymbol;
+#X obj 539 534 list;
+#X msg 539 619 set /\$1/vuR_control;
+#X msg 559 566 set /\$1/vuL_control;
 #X connect 5 0 7 0;
 #X connect 6 0 5 0;
 #X connect 7 0 15 0;
@@ -83,9 +83,8 @@
 #X connect 23 0 29 0;
 #X connect 23 0 27 0;
 #X connect 23 0 33 0;
+#X connect 23 0 0 0;
 #X connect 24 0 21 0;
-#X connect 34 0 0 0;
-#X connect 35 0 1 0;
 #X connect 36 0 37 0;
 #X connect 37 0 38 0;
 #X connect 38 0 40 0;
