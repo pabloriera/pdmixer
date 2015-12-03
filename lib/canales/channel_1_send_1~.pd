@@ -1,9 +1,9 @@
-#N canvas 676 87 536 467 10;
+#N canvas 902 216 536 467 10;
 #X declare -lib multicatch;
 #X declare -path lib;
 #X text 108 13 \$1 nombre del canal \$2 in (etiqueta) \$3 out (etiqueta)
 \$4 envio 1 (etiqueta) \$5;
-#N canvas 359 400 614 196 eq~ 0;
+#N canvas 1165 490 614 196 eq~ 1;
 #X obj 20 18 inlet~;
 #X obj 19 91 outlet~;
 #X obj 64 18 r /\$1/eq_params;
@@ -66,7 +66,7 @@
 #X connect 8 0 1 0;
 #X connect 9 0 6 1;
 #X restore -26 222 pd solo-mute-signal~;
-#N canvas 644 261 450 300 pan-stereo~ 1;
+#N canvas 644 261 450 300 pan-stereo~ 0;
 #X obj -77 18 inlet~;
 #X obj -76 227 outlet~;
 #X obj 18 227 outlet~;

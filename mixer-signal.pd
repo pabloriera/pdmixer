@@ -1,4 +1,4 @@
-#N canvas 579 253 686 335 10;
+#N canvas 575 263 678 380 10;
 #X declare -lib multicatch;
 #X declare -path lib/canales;
 #X declare -path lib;
@@ -27,7 +27,7 @@
 #X obj 120 -426 cnv 15 100 60 empty empty In/Out 3 10 0 14 -233017
 -66577 0;
 #X obj -279 -430 import multicatch;
-#N canvas 482 175 728 278 io 0;
+#N canvas 478 185 728 278 io 1;
 #X obj 13 205 dac~ 1;
 #X obj 13 41 adc~ 1;
 #X obj 93 42 adc~ 2;
@@ -54,7 +54,6 @@
 #X obj 222 174 mcatch~ ADC1_L;
 #X obj 318 174 mcatch~ ADC1_R;
 #X connect 2 0 14 0;
-#X connect 6 0 13 0;
 #X connect 7 0 15 0;
 #X connect 8 0 16 0;
 #X connect 9 0 17 0;
